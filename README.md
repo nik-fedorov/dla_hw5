@@ -43,7 +43,7 @@ python test.py \
   -o test_data/scores.json
 ```
 - on eval split of ASVspoof2019 dataset:
-- ```shell
+```shell
 python test.py \
   -c default_test_model/config.json \
   -r default_test_model/checkpoint.pth \
