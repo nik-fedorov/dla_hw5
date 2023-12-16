@@ -1,0 +1,38 @@
+{
+  "name": "test_config",
+  "n_gpu": 1,
+  "preprocessing": {
+    "sr": 16000
+  },
+  "arch": {
+    "type": "RawNet",
+    "args": {
+      "n_sync_filters": 128,
+      "sync_kernel_size": 129,
+      "sync_min_low_hz": 0,
+      "sync_min_band_hz": 0,
+      "n_filters_resblock1": 128,
+      "n_filters_resblock2": 512,
+      "gru_num_layers": 3,
+      "gru_hid_size": 1024
+    }
+  },
+  "data": {
+    "test": {
+      "batch_size": 32,
+      "num_workers": 8,
+      "datasets": [
+        {
+          "type": "ASV2019AntispoofDataset",
+          "args": {
+            "part": "eval",
+            "audio_len": 64000
+          }
+        }
+      ]
+    }
+  },
+  "trainer": {
+    "save_dir": "saved/"
+  }
+}

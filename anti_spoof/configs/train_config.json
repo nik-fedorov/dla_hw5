@@ -1,0 +1,89 @@
+{
+  "name": "best_ablation_kernel_sizes",
+  "n_gpu": 1,
+  "preprocessing": {
+    "sr": 16000
+  },
+  "arch": {
+    "type": "RawNet",
+    "args": {
+      "n_sync_filters": 128,
+      "sync_kernel_size": 129,
+      "sync_min_low_hz": 0,
+      "sync_min_band_hz": 0,
+      "n_filters_resblock1": 128,
+      "n_filters_resblock2": 512,
+      "gru_num_layers": 3,
+      "gru_hid_size": 1024
+    }
+  },
+  "data": {
+    "train": {
+      "batch_size": 32,
+      "num_workers": 8,
+      "datasets": [
+        {
+          "type": "ASV2019AntispoofDataset",
+          "args": {
+            "part": "train",
+            "audio_len": 64000
+          }
+        }
+      ]
+    },
+    "val": {
+      "batch_size": 32,
+      "num_workers": 8,
+      "datasets": [
+        {
+          "type": "ASV2019AntispoofDataset",
+          "args": {
+            "part": "dev",
+            "audio_len": 64000
+          }
+        }
+      ]
+    }
+  },
+  "optimizer": {
+    "type": "Adam",
+    "args": {
+      "lr": 1e-4,
+      "weight_decay": 1e-4
+    }
+  },
+  "loss": {
+    "type": "BCELossWrapper",
+    "args": {
+    }
+  },
+  "metrics": [
+    {
+      "type": "EER",
+      "args": {
+        "name": "EER"
+      }
+    }
+  ],
+  "lr_scheduler": {
+    "type": "StepLR",
+    "args": {
+      "step_size": 500000000000000,
+      "gamma": 1.0
+    }
+  },
+  "trainer": {
+    "epochs": 1000,
+    "log_step": 100,
+    "save_dir": "saved/",
+    "save_period": 1,
+    "verbosity": 2,
+
+    "monitor": "min val_loss",
+    "early_stop": 100,
+
+    "visualize": "wandb",
+    "wandb_project": "dla_hw5",
+    "wandb_run_id_to_resume": null
+  }
+}

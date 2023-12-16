@@ -1,0 +1,37 @@
+[
+  {
+    "audio_path": "/home/nik-fedorov/repos/dla_hw5/test_data/alice.wav",
+    "score": 8.370393753051758,
+    "probs": 0.9997684359550476
+  },
+  {
+    "audio_path": "/home/nik-fedorov/repos/dla_hw5/test_data/hifigan.wav",
+    "score": 2.5293073654174805,
+    "probs": 0.926171064376831
+  },
+  {
+    "audio_path": "/home/nik-fedorov/repos/dla_hw5/test_data/audio_2.flac",
+    "score": -3.4017140865325928,
+    "probs": 0.03224193677306175
+  },
+  {
+    "audio_path": "/home/nik-fedorov/repos/dla_hw5/test_data/comedy_club_rec.wav",
+    "score": 9.494526863098145,
+    "probs": 0.9999247789382935
+  },
+  {
+    "audio_path": "/home/nik-fedorov/repos/dla_hw5/test_data/fastspeech.wav",
+    "score": -7.668566703796387,
+    "probs": 0.0004670688649639487
+  },
+  {
+    "audio_path": "/home/nik-fedorov/repos/dla_hw5/test_data/audio_1.flac",
+    "score": -9.225913047790527,
+    "probs": 9.844510350376368e-05
+  },
+  {
+    "audio_path": "/home/nik-fedorov/repos/dla_hw5/test_data/audio_3.flac",
+    "score": 8.443918228149414,
+    "probs": 0.9997848868370056
+  }
+]
